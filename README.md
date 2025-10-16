@@ -25,7 +25,7 @@ Avant d’exécuter le job, définissez ces trois variables de contexte :
 Ce job est conçu pour **Talend Open Studio 7.3.x** et **Talaxie**.  
 Il est entièrement autonome et ne nécessite aucune base de données.
 
-Documentation complète sur : [https://bmdata.fr/blog/tFIleOutputPDF2/](https://bmdata.fr/blog/tFIleOutputPDF2/)
+Documentation complète sur : [https://bmdata.fr/blog/tFileOutputPDF2/](https://bmdata.fr/blog/tFileOutputPDF2/)
 
 ---
 

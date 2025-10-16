@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter comment="Repertoire de sortie du PDF" name="sDossier_OUTPUT" prompt="sDossier_OUTPUT?" promptNeeded="false" type="id_String" value="C:\TEMP"/>
+    <contextParameter comment="Chemin du fichier logo" name="sCheminFichier_LOGO" prompt="sCheminFichier_LOGO?" promptNeeded="false" type="id_String" value="C:\TEMP\logo.png"/>
+    <contextParameter comment="Chemin du fichier Signature" name="sCheminFihcier_SIGNATURE" prompt="sCheminFihcier_SIGNATURE?" promptNeeded="false" type="id_String" value="C:\TEMP\signature.png"/>
+  </context>
+  <parameters>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" value="" show="false"/>
+    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
+    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
+    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" value="false" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" value="ISO-8859-15" show="false"/>
+    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" value="" show="false"/>
+    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:wPXu0R8EVVe2/t8MvCsHNOr/KyYMCjyc+m/ak+2i" show="false"/>
+    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;C:/Workspaces/Talend_7/DI/WS_PERSO/.metadata&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="ISO-8859-15" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="tJDBCOutput" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_12" show="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:oymn1eCqeXkAAmHhSY1sSdRMYZ54kOZmr79YHKfS" show="false"/>
+    <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false" show="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" value="" show="false"/>
+    <elementParameter field="CHECK" name="HEADER_ENABLED" value="false" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_LIBRARY" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_CODE" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_IMPORT" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" value="" show="false"/>
+    <elementParameter field="CHECK" name="FOOTER_ENABLED" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_LIBRARY" value="" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_CODE" value="" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_IMPORT" value="" show="false"/>
+    <routinesParameter id="_Hyh3EKnREfCuaJmE8d6Amg" name="DataOperation"/>
+    <routinesParameter id="_HzKwQKnREfCuaJmE8d6Amg" name="Mathematical"/>
+    <routinesParameter id="_HzWWcKnREfCuaJmE8d6Amg" name="Numeric"/>
+    <routinesParameter id="_HzdrMKnREfCuaJmE8d6Amg" name="Relational"/>
+    <routinesParameter id="_HzmOEKnREfCuaJmE8d6Amg" name="StringHandling"/>
+    <routinesParameter id="_HzybVqnREfCuaJmE8d6Amg" name="TalendDataGenerator"/>
+    <routinesParameter id="_Hz9acKnREfCuaJmE8d6Amg" name="TalendDate"/>
+    <routinesParameter id="_H0HLcKnREfCuaJmE8d6Amg" name="TalendString"/>
+    <routinesParameter id="_H0RjgKnREfCuaJmE8d6Amg" name="TalendStringUtil"/>
+  </parameters>
+  <node componentName="tRowGenerator" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tRowGenerator_1" show="false"/>
+    <elementParameter field="TEXT" name="NB_ROWS" value="25" show="false"/>
+    <elementParameter field="TABLE" name="VALUES" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
+      <elementValue elementRef="ARRAY" value="Numeric.sequence(&quot;id_seq&quot; ,1 ,1 )"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nom"/>
+      <elementValue elementRef="ARRAY" value="TalendDataGenerator.getLastName()"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prenom"/>
+      <elementValue elementRef="ARRAY" value="TalendDataGenerator.getFirstName()"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ddn"/>
+      <elementValue elementRef="ARRAY" value="TalendDate.getRandomDate(&quot;1980-01-01&quot; ,&quot;2025-10-15&quot; )"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nbre_article_achete"/>
+      <elementValue elementRef="ARRAY" value="Numeric.random(0 ,100 )"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prix_article_unitaire"/>
+      <elementValue elementRef="ARRAY" value="Numeric.random(1 ,200 )"/>
+    </elementParameter>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="TEXT" name="LABEL" value="Data generation"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tRowGenerator_1">
+      <column comment="" defaultValue="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;sequence&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;sequence identifier&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;id_seq\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;start value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;step&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="nom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getLastName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="prenom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getFirstName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="ddn" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getRandomDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;1980-01-01\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2025-10-15\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="nbre_article_achete" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;random&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;0 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;100 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="prix_article_unitaire" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;random&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;200 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_1" show="false"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_nOq4YKnSEfCuaJmE8d6Amg-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" value="0" show="false"/>
+    <elementParameter field="TEXT" name="JACCARD" value="0" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out1">
+      <column comment="" defaultValue="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;sequence&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;sequence identifier&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;id_seq\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;start value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;step&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="nom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getFirstName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="prenom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getLastName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="ddn" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getRandomDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;1980-01-01\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2025-10-15\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="utilisateur_enregistre" nullable="true" pattern="" precision="-1" sourceType="" type="id_Boolean" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;NOT&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;&quot;,&quot;PARAMETER_VALUE&quot;:&quot;true &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Relational&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="nbre_article_achete" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;random&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;0 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;100 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="prix_article_unitaire" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;random&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;200 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="total_panier" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables sizeState="INTERMEDIATE" name="Var">
+        <mapperTableEntries name="isPair" expression="row1.nbre_article_achete%2==0?true:false " type="id_Boolean"/>
+      </varTables>
+      <outputTables sizeState="INTERMEDIATE" name="out1">
+        <mapperTableEntries name="id" expression="row1.id " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="nom" expression="row1.nom " type="id_String" nullable="true"/>
+        <mapperTableEntries name="prenom" expression="row1.prenom " type="id_String" nullable="true"/>
+        <mapperTableEntries name="ddn" expression="row1.ddn " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="utilisateur_enregistre" expression="Var.isPair " type="id_Boolean" nullable="true"/>
+        <mapperTableEntries name="nbre_article_achete" expression="row1.nbre_article_achete " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="prix_article_unitaire" expression="row1.prix_article_unitaire " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="total_panier" expression="row1.nbre_article_achete *row1.prix_article_unitaire " type="id_Integer" nullable="true"/>
+      </outputTables>
+      <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="id" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="nom" type="id_String" nullable="true"/>
+        <mapperTableEntries name="prenom" type="id_String" nullable="true"/>
+        <mapperTableEntries name="ddn" type="id_Date" nullable="true"/>
+        <mapperTableEntries name="nbre_article_achete" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="prix_article_unitaire" type="id_Integer" nullable="true"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_1" show="false"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" show="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" show="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nom"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prenom"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ddn"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="utilisateur_enregistre"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nbre_article_achete"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prix_article_unitaire"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="total_panier"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_1">
+      <column comment="" defaultValue="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;sequence&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;sequence identifier&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;id_seq\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;start value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;step&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="nom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getFirstName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="prenom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getLastName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="ddn" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getRandomDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;1980-01-01\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2025-10-15\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="utilisateur_enregistre" nullable="true" pattern="" precision="-1" sourceType="" type="id_Boolean" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;NOT&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;&quot;,&quot;PARAMETER_VALUE&quot;:&quot;true &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Relational&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="nbre_article_achete" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;random&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;0 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;100 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="prix_article_unitaire" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;random&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;200 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="total_panier" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputPDF2" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="832" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputPDF2_1" show="false"/>
+    <elementParameter field="FILE" name="GENERATED_FILE_PATH" value="context.sDossier_OUTPUT+&quot;/out.pdf&quot;"/>
+    <elementParameter field="CHECK" name="CHECK_MAKE_DIRECTORY" value="false"/>
+    <elementParameter field="TEXT" name="FILE_TITLE" value="&quot;Liste des utilisateur et de leur commandes&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TITLE_ALIGN" value="com.lowagie.text.Element.ALIGN_RIGHT"/>
+    <elementParameter field="CHECK" name="CHECK_FONT_TITLE" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_TITLE" value="com.lowagie.text.FontFactory.TIMES_ROMAN"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_TITLE_STYLE" value="com.lowagie.text.Font.NORMAL"/>
+    <elementParameter field="TEXT" name="SIZE_FONT_TITLE" value="12"/>
+    <elementParameter field="TEXT" name="TITLE_FONT_COLOR_R" value="0"/>
+    <elementParameter field="TEXT" name="TITLE_FONT_COLOR_G" value="0"/>
+    <elementParameter field="TEXT" name="TITLE_FONT_COLOR_B" value="0"/>
+    <elementParameter field="TEXT" name="FILE_SUBTITLE" value="&quot;Ce PDF est généré automatiquement&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="SUBTITLE_ALIGN" value="com.lowagie.text.Element.ALIGN_RIGHT"/>
+    <elementParameter field="CHECK" name="CHECK_FONT_SUBTITLE" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_SUBTITLE" value="com.lowagie.text.FontFactory.TIMES_ROMAN"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_SUBTITLE_STYLE" value="com.lowagie.text.Font.NORMAL"/>
+    <elementParameter field="TEXT" name="SIZE_FONT_SUBTITLE" value="10"/>
+    <elementParameter field="TEXT" name="SUBTITLE_FONT_COLOR_R" value="0"/>
+    <elementParameter field="TEXT" name="SUBTITLE_FONT_COLOR_G" value="0"/>
+    <elementParameter field="TEXT" name="SUBTITLE_FONT_COLOR_B" value="0"/>
+    <elementParameter field="TEXT" name="FILE_COMMENT" value="&quot;Contactez Martial BODET pour plus d'informations&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="COMMENT_ALIGN" value="com.lowagie.text.Element.ALIGN_LEFT"/>
+    <elementParameter field="CHECK" name="CHECK_FONT_COMMENT" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_COMMENT" value="com.lowagie.text.FontFactory.TIMES_ROMAN"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_COMMENT_STYLE" value="com.lowagie.text.Font.NORMAL"/>
+    <elementParameter field="TEXT" name="SIZE_FONT_COMMENT" value="8"/>
+    <elementParameter field="TEXT" name="COMMENT_FONT_COLOR_R" value="255"/>
+    <elementParameter field="TEXT" name="COMMENT_FONT_COLOR_G" value="0"/>
+    <elementParameter field="TEXT" name="COMMENT_FONT_COLOR_B" value="0"/>
+    <elementParameter field="FILE" name="FILE_IMAGE" value="context.sCheminFichier_LOGO"/>
+    <elementParameter field="CHECK" name="CHECK_LOGO_SCALE" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_LOGO_MAX_WIDTH" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LOGO_MAX_WIDTH" value="100" show="false"/>
+    <elementParameter field="CHECK" name="CHECK_LOGO_MAX_HEIGHT" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LOGO_MAX_HEIGHT" value="50" show="false"/>
+    <elementParameter field="CHECK" name="CHECK_LOGO_WIDTH" value="true"/>
+    <elementParameter field="TEXT" name="LOGO_WIDTH" value="100"/>
+    <elementParameter field="CHECK" name="CHECK_LOGO_HEIGHT" value="true"/>
+    <elementParameter field="TEXT" name="LOGO_HEIGHT" value="100"/>
+    <elementParameter field="CLOSED_LIST" name="PAGE_ORIENTATION" value="com.lowagie.text.PageSize.A4.rotate()"/>
+    <elementParameter field="CHECK" name="CHECK_PAGE_MARGING" value="true"/>
+    <elementParameter field="TEXT" name="PAGE_MARGING_LEFT" value="10"/>
+    <elementParameter field="TEXT" name="PAGE_MARGING_RIGHT" value="10"/>
+    <elementParameter field="TEXT" name="PAGE_MARGING_TOP" value="10"/>
+    <elementParameter field="TEXT" name="PAGE_MARGING_BOTTOM" value="10"/>
+    <elementParameter field="CHECK" name="CHECK_PAGE_HEADER" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="HEADER_FIRST_PAGE" value="DATE_EDIT"/>
+    <elementParameter field="TEXT" name="HEADER_FIRST_PAGE_OTHER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="HEADER_FIRST_PAGE_ALIGN" value="com.lowagie.text.Element.ALIGN_RIGHT"/>
+    <elementParameter field="CLOSED_LIST" name="HEADER_NEXT_PAGE" value="TITLE"/>
+    <elementParameter field="TEXT" name="HEADER_NEXT_PAGE_OTHER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="HEADER_NEXT_PAGE_ALIGN" value="com.lowagie.text.Element.ALIGN_CENTER"/>
+    <elementParameter field="CHECK" name="CHECK_PAGE_FOOTER" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="FOOTER_PAGE" value="PAGE"/>
+    <elementParameter field="TEXT" name="FOOTER_PAGE_OTHER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="FOOTER_PAGE_ALIGN" value="com.lowagie.text.Element.ALIGN_RIGHT"/>
+    <elementParameter field="CHECK" name="CHECK_SIGN" value="true"/>
+    <elementParameter field="FILE" name="FILE_IMAGE_SIGN" value="context.sCheminFihcier_SIGNATURE"/>
+    <elementParameter field="CLOSED_LIST" name="SIGN_ALIGN" value="com.lowagie.text.Element.ALIGN_LEFT"/>
+    <elementParameter field="CHECK" name="CHECK_SIGN_SCALE" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_SIGN_MAX_WIDTH" value="false" show="false"/>
+    <elementParameter field="TEXT" name="SIGN_MAX_WIDTH" value="100" show="false"/>
+    <elementParameter field="CHECK" name="CHECK_SIGN_MAX_HEIGHT" value="false" show="false"/>
+    <elementParameter field="TEXT" name="SIGN_MAX_HEIGHT" value="50" show="false"/>
+    <elementParameter field="CHECK" name="CHECK_SIGN_WIDTH" value="true"/>
+    <elementParameter field="TEXT" name="SIGN_WIDTH" value="512"/>
+    <elementParameter field="CHECK" name="CHECK_SIGN_HEIGHT" value="true"/>
+    <elementParameter field="TEXT" name="SIGN_HEIGHT" value="150"/>
+    <elementParameter field="CHECK" name="CUSTOM_BORDER" value="false"/>
+    <elementParameter field="TEXT" name="BORDER_WIDTH" value="0.5" show="false"/>
+    <elementParameter field="TEXT" name="BORDER_COLOR_R" value="0" show="false"/>
+    <elementParameter field="TEXT" name="BORDER_COLOR_G" value="0" show="false"/>
+    <elementParameter field="TEXT" name="BORDER_COLOR_B" value="0" show="false"/>
+    <elementParameter field="TEXT" name="TABLE_BORDER_WIDTH" value="0.5" show="false"/>
+    <elementParameter field="TEXT" name="TABLE_BORDER_COLOR_R" value="0" show="false"/>
+    <elementParameter field="TEXT" name="TABLE_BORDER_COLOR_G" value="0" show="false"/>
+    <elementParameter field="TEXT" name="TABLE_BORDER_COLOR_B" value="0" show="false"/>
+    <elementParameter field="TEXT" name="CELL_BORDER_WIDTH" value="0.5" show="false"/>
+    <elementParameter field="TEXT" name="CELL_BORDER_COLOR_R" value="0" show="false"/>
+    <elementParameter field="TEXT" name="CELL_BORDER_COLOR_G" value="0" show="false"/>
+    <elementParameter field="TEXT" name="CELL_BORDER_COLOR_B" value="0" show="false"/>
+    <elementParameter field="TABLE" name="BORDER_RIGHT" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nom"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prenom"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ddn"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="utilisateur_enregistre"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nbre_article_achete"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prix_article_unitaire"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="total_panier"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="true"/>
+    <elementParameter field="TEXT" name="HEIGHT_HEADER" value="20"/>
+    <elementParameter field="CLOSED_LIST" name="HEADER_VALIGN" value="com.lowagie.text.Element.ALIGN_MIDDLE"/>
+    <elementParameter field="CHECK" name="CHECK_GROUP_NULL" value="true"/>
+    <elementParameter field="TEXT" name="SIZE_FONT_HEADER" value="12"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_HEADER" value="com.lowagie.text.FontFactory.TIMES_ROMAN"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_HEADER_STYLE" value="com.lowagie.text.Font.NORMAL"/>
+    <elementParameter field="TEXT" name="FONT_HEADER_COLOR_R" value="0"/>
+    <elementParameter field="TEXT" name="FONT_HEADER_COLOR_G" value="0"/>
+    <elementParameter field="TEXT" name="FONT_HEADER_COLOR_B" value="0"/>
+    <elementParameter field="TEXT" name="BACKGROUND_HEADER_COLOR_R" value="200"/>
+    <elementParameter field="TEXT" name="BACKGROUND_HEADER_COLOR_G" value="200"/>
+    <elementParameter field="TEXT" name="BACKGROUND_HEADER_COLOR_B" value="200"/>
+    <elementParameter field="TABLE" name="COLUMN_HEADER">
+      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
+      <elementValue elementRef="LABEL" value="Identifiant"/>
+      <elementValue elementRef="GROUP" value="Utilisateur"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_CENTER"/>
+      <elementValue elementRef="ROTATION" value="0"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value="com.lowagie.text.Font.BOLD"/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nom"/>
+      <elementValue elementRef="LABEL" value="Nom"/>
+      <elementValue elementRef="GROUP" value="Utilisateur"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_CENTER"/>
+      <elementValue elementRef="ROTATION" value="0"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value="com.lowagie.text.Font.UNDERLINE"/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prenom"/>
+      <elementValue elementRef="LABEL" value="Prénom"/>
+      <elementValue elementRef="GROUP" value="Utilisateur"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_CENTER"/>
+      <elementValue elementRef="ROTATION" value="0"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value="com.lowagie.text.Font.UNDERLINE"/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ddn"/>
+      <elementValue elementRef="LABEL" value="Date de Naissance"/>
+      <elementValue elementRef="GROUP" value="Utilisateur"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_CENTER"/>
+      <elementValue elementRef="ROTATION" value="0"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value="com.lowagie.text.Font.NORMAL"/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="utilisateur_enregistre"/>
+      <elementValue elementRef="LABEL" value="Enregistrement de l'utilisateur ?"/>
+      <elementValue elementRef="GROUP" value="Utilisateur"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_CENTER"/>
+      <elementValue elementRef="ROTATION" value="0"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value="com.lowagie.text.Font.BOLDITALIC"/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nbre_article_achete"/>
+      <elementValue elementRef="LABEL" value="N° d'articles"/>
+      <elementValue elementRef="GROUP" value="Commande"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_CENTER"/>
+      <elementValue elementRef="ROTATION" value="0"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value="com.lowagie.text.Font.NORMAL"/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prix_article_unitaire"/>
+      <elementValue elementRef="LABEL" value="Prix de l'article"/>
+      <elementValue elementRef="GROUP" value="Commande"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_CENTER"/>
+      <elementValue elementRef="ROTATION" value="0"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value="com.lowagie.text.Font.NORMAL"/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="total_panier"/>
+      <elementValue elementRef="LABEL" value="Total du panier"/>
+      <elementValue elementRef="GROUP" value="Commande"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_CENTER"/>
+      <elementValue elementRef="ROTATION" value="0"/>
+      <elementValue elementRef="FONT_SIZE" value="18"/>
+      <elementValue elementRef="FONT_STYLE" value="com.lowagie.text.Font.NORMAL"/>
+      <elementValue elementRef="COLOR_R" value="255"/>
+      <elementValue elementRef="COLOR_G" value="0"/>
+      <elementValue elementRef="COLOR_B" value="0"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="ALTERNATE_ROW" value="true"/>
+    <elementParameter field="TEXT" name="ALTERNATE_ROW_COLOR_R" value="240"/>
+    <elementParameter field="TEXT" name="ALTERNATE_ROW_COLOR_G" value="240"/>
+    <elementParameter field="TEXT" name="ALTERNATE_ROW_COLOR_B" value="240"/>
+    <elementParameter field="TEXT" name="TABLE_TOP_SPACING" value="50"/>
+    <elementParameter field="CHECK" name="TABLE_FULL_WIDTH" value="true"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ALIGN" value="com.lowagie.text.Element.ALIGN_RIGHT" show="false"/>
+    <elementParameter field="CHECK" name="CHECK_COLUMN_AUTO" value="true"/>
+    <elementParameter field="TABLE" name="COLUMN" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nom"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prenom"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ddn"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="utilisateur_enregistre"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nbre_article_achete"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prix_article_unitaire"/>
+      <elementValue elementRef="WIDTH" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="total_panier"/>
+      <elementValue elementRef="WIDTH" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="CHECK_FONT_BODY" value="true"/>
+    <elementParameter field="TEXT" name="BODY_HEADER" value="15"/>
+    <elementParameter field="CLOSED_LIST" name="BODY_VALIGN" value="com.lowagie.text.Element.ALIGN_TOP"/>
+    <elementParameter field="TEXT" name="SIZE_FONT_BODY" value="10"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_BODY" value="com.lowagie.text.FontFactory.TIMES_ROMAN"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_BODY_STYLE" value="com.lowagie.text.Font.NORMAL"/>
+    <elementParameter field="TEXT" name="FONT_BODY_COLOR_R" value="0"/>
+    <elementParameter field="TEXT" name="FONT_BODY_COLOR_G" value="0"/>
+    <elementParameter field="TEXT" name="FONT_BODY_COLOR_B" value="0"/>
+    <elementParameter field="TABLE" name="COLUMN_BODY">
+      <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_LEFT"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value="com.lowagie.text.Font.BOLD"/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nom"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_LEFT"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prenom"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_LEFT"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ddn"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_LEFT"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="utilisateur_enregistre"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_LEFT"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="nbre_article_achete"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_LEFT"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="prix_article_unitaire"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_LEFT"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="total_panier"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="ALIGN" value="com.lowagie.text.Element.ALIGN_LEFT"/>
+      <elementValue elementRef="FONT_SIZE" value=""/>
+      <elementValue elementRef="FONT_STYLE" value=""/>
+      <elementValue elementRef="COLOR_R" value=""/>
+      <elementValue elementRef="COLOR_G" value=""/>
+      <elementValue elementRef="COLOR_B" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="CHECK_LAST_ROW" value="false"/>
+    <elementParameter field="TEXT" name="SIZE_FONT_LAST_ROW" value="10" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_LAST_ROW" value="com.lowagie.text.FontFactory.TIMES_ROMAN" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="FONT_LAST_ROW_STYLE" value="com.lowagie.text.Font.BOLD" show="false"/>
+    <elementParameter field="CHECK" name="CHECK_SPAN_NULL" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_HIDE_NULL" value="false"/>
+    <elementParameter field="TEXT" name="FONT_LAST_ROW_COLOR_R" value="0" show="false"/>
+    <elementParameter field="TEXT" name="FONT_LAST_ROW_COLOR_G" value="0" show="false"/>
+    <elementParameter field="TEXT" name="FONT_LAST_ROW_COLOR_B" value="0" show="false"/>
+    <elementParameter field="TEXT" name="BACKGROUND_LAST_ROW_COLOR_R" value="255" show="false"/>
+    <elementParameter field="TEXT" name="BACKGROUND_LAST_ROW_COLOR_G" value="255" show="false"/>
+    <elementParameter field="TEXT" name="BACKGROUND_LAST_ROW_COLOR_B" value="255" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__GENERATED_FILE_PATH__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputPDF2_1">
+      <column comment="" defaultValue="" key="false" length="-1" name="id" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;sequence&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;sequence identifier&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;id_seq\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;start value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;step&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="nom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getFirstName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="prenom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getLastName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="ddn" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getRandomDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;1980-01-01\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2025-10-15\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="utilisateur_enregistre" nullable="true" pattern="" precision="-1" sourceType="" type="id_Boolean" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;NOT&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;&quot;,&quot;PARAMETER_VALUE&quot;:&quot;true &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Relational&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="nbre_article_achete" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;random&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;0 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;100 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" defaultValue="" key="false" length="-1" name="prix_article_unitaire" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;random&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;200 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
+      </column>
+      <column comment="" key="false" length="-1" name="total_panier" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tRowGenerator_1" offsetLabelX="0" offsetLabelY="0" source="tRowGenerator_1" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tLogRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="total_panier"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="out1" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tLogRow_1" offsetLabelX="0" offsetLabelY="0" source="tLogRow_1" target="tFileOutputPDF2_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
+  </connection>
+  <note opaque="true" posX="192" posY="0" sizeHeight="353" sizeWidth="769" text="Bienvenue dans ce job de démonstration.&#xD;&#xA;&#xD;&#xA;Le principe est très simple :&#xD;&#xA;&#xD;&#xA;1. Les données sont générées par le composant tRowGenerator.&#xD;&#xA;2. Elles sont enrichies via un tMap.&#xD;&#xA;3. Elles sont affichées dans la console grâce au tLogRow.&#xD;&#xA;4. Elles sont enfin exportées dans un fichier PDF via tFileOutputPDF2.&#xD;&#xA;&#xD;&#xA;Avant de lancer le job, assurez-vous d’avoir correctement renseigné&#xD;&#xA;les trois variables de contexte suivantes :&#xD;&#xA;&#xD;&#xA;- sDossier_OUTPUT        → dossier de sortie du PDF&#xD;&#xA;- sCheminFichier_LOGO    → chemin complet du logo (image)&#xD;&#xA;- sCheminFichier_SIGNATURE → chemin complet de la signature (image)&#xD;&#xA;&#xD;&#xA;Vous avez un besoin spécifique ou souhaitez aller plus loin ?&#xD;&#xA;Prenez rendez-vous sur : https://bmdata.fr&#xD;&#xA;">
+    <elementParameter field="RADIO" name="NOTETXT_LEFT" value="true"/>
+    <elementParameter field="RADIO" name="NOTETXT_CENTER" value="false"/>
+    <elementParameter field="RADIO" name="NOTELABEL_CENTER" value="false"/>
+    <elementParameter field="RADIO" name="NOTETXT_TOP" value="true"/>
+    <elementParameter field="TEXT" name="FONT_SIZE" value="11"/>
+  </note>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tRowGenerator_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+</talendfile:ProcessType>
